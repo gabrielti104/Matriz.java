@@ -1,0 +1,43 @@
+package relogio;
+
+import java.util.Scanner;
+
+public class Relogio {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Digite o Dia da semana: ");
+        String dia = entrada.next();
+        System.out.println("Digite o Numero de Horas: ");
+        int horas = entrada.nextInt();
+        System.out.println("Digite o Numero de minutos: ");
+        int minutos = entrada.nextInt();
+        System.out.println("Digite o Numero de segundos: ");
+        int segundos = entrada.nextInt();
+        int h;
+        int m;
+        int s;
+        for (h = 0; h <= 23; h++) {
+            for (m = 0; m <= 59; m++) {
+                for (s = 0; s <= 59; s++) {
+                    System.out.printf("%d:%d:%d\n", h, m, s);
+                    if (h == horas && m == minutos && s == segundos) {
+                        System.out.println(dia);
+                        System.out.println(" ALARME");
+                        break;
+                    }
+
+                }
+                if (h == horas && m == minutos) {
+                    break;
+                }
+
+            }
+            if (h == horas) {
+                break;
+
+            }
+        }
+
+    }
+}
